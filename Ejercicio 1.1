@@ -1,0 +1,43 @@
+/*  
+    Programacion II
+    TP1: Ejercicio 1
+    Funcion Factorial
+*/
+
+#include <stdio.h>
+#include <stdlib.h>
+
+/* Prototipos */
+
+unsigned long factorial(int n);
+
+/* Programa Principal */
+
+int main()
+{
+    	int n;
+    	printf("factorizar numero\n");
+    	do
+    	{
+  		printf("ingrese numero (<14): ");  /* <14 porque numero mayores no son soportados por la función. */
+        	scanf("%d",&n);
+    	}
+	while(n>=14);
+
+    	if(n>=0 && n<14)
+        	printf("El factorial del numero es: %lu", factorial(n)); /* Ejecuto e imprimo la función */ 
+
+        return 0;
+}
+
+/* Funciones */
+
+unsigned long factorial(int n)
+{
+	if(n>14) return 0;
+
+	unsigned long s=1;
+	while(n>1)
+	s*=n--;
+	return s;
+}
